@@ -111,7 +111,7 @@ class nodeScale(object):
          area = float(value)/areaDict[dstNode][srcNode]
          logging.info("Scaled area: {}".format(area))
          return(area)
-      elif (metric == 'd'):
+      elif (metric == 'delay'):
          dFacSrc = depCoeffDict[srcNode][0]*float(srcVdd)**3 + \
                   depCoeffDict[srcNode][1]*float(srcVdd)**2 + \
                   depCoeffDict[srcNode][2]*float(srcVdd)    + \
@@ -121,7 +121,7 @@ class nodeScale(object):
                   depCoeffDict[dstNode][2]*float(dstVdd)    + \
                   depCoeffDict[dstNode][3]
          delay = float(value) * dFacDst/dFacSrc
-         logging.infoprint("Scaled delay: {}".format(delay))
+         logging.info("Scaled delay: {}".format(delay))
          return(delay)
       elif (metric == 'energy'):
          eFacSrc = depCoeffDict[srcNode][4]*float(srcVdd)**2 + \
